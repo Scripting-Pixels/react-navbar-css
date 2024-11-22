@@ -13,10 +13,15 @@ Before you start, make sure you have:
 - npm (Node Package Manager) or Yarn  
 
 ## Getting Started:  
-1. **Clone the repo**:  
-   ```bash  
-    https://github.com/Scripting-Pixels/react-navbar-css
-    cd react-navbar-css
+
+1. **Clone the repo**:
+   To get started, clone the repository to your local machine by running the following command in your terminal:
+   ```bash
+   git clone https://github.com/Scripting-Pixels/react-navbar-css
+
+## Navigate into the project folder: Change to the project directory:
+
+`cd react-navbar-css`
 
 ## Install dependencies:
 Run this in the project folder:
