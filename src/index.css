@@ -1,0 +1,115 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body { margin: 0; }
+
+/* Navbar component */
+.header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  background-color: black;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  height: 74px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  background-color: black;
+  display: flex; /* Nav items are displayed in a row by default */
+  justify-content: flex-end;
+  padding: 0 2rem;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex; /* Make the list items horizontal */
+  list-style: none;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.nav a.active, a:hover {
+  color: #F9E300;
+}
+
+.menu-button {
+  background-color: transparent;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hide the menu button by default */
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: block;
+  }
+
+  .top-row {
+    padding: 1rem;
+  }
+
+  .nav {
+    /* When screen is smaller, stack the nav items vertically */
+    flex-direction: column;
+    padding: 0;
+    align-items: normal;
+    max-height: 0; /* Start with no height */
+    transition: max-height 0.3s ease; /* Smooth slide effect */
+    overflow: hidden; /* Hide content outside the container */
+    position: absolute;
+    left: 0;
+    top: 72px;
+    width: 100%;
+  }
+
+  .nav.active {
+    display: flex; /* Show nav items when the active class is added */
+    left: 0;
+    top: 70px;
+    width: 100%;
+    max-height: 320px; /* Set a height large enough for all items */
+  }
+
+  .menu-button {
+    display: inline-block; /* Show the menu button on smaller screens */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    margin: 1rem 1rem 2rem 1rem;
+  }
+}
+
