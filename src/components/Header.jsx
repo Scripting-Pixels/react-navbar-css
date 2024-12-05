@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaTimes, FaBars } from "react-icons/fa";
+import { Logo } from "./Logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,35 +12,29 @@ const Navbar = () => {
 
   return (
     <header className="header">
-      <div className="top-row">
-        <div className="logo">LOGO</div>
-        <button 
-          className="menu-button" 
-          onClick={toggleMenu}
-        >
-          {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-        </button>
-      </div>
-
+      <Logo />
       <nav className={`nav ${isOpen ? "active" : ""}`}>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a className="active" href="/blog">Blog</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <a href="/contact">Contact</a>
-          </li>
-          <li>
-            <a href="/pro">Go Pro</a>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </nav>
+      <button 
+        className="toggle-menu" 
+        onClick={toggleMenu}
+      >
+        {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+      </button>
     </header>
   );
 };
